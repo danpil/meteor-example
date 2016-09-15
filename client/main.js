@@ -12,3 +12,9 @@ Template.editor.events({
         })
     }
 });
+
+Template.post.events({
+    "click .remove": function () {
+        Posts.remove(this._id);
+    }
+});
