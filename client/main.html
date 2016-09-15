@@ -4,6 +4,7 @@
 
 <body>
 <div class="container">
+    {{> editor}}
     <div class="row">
         <div class="twelve columns">
             {{> stream}}
@@ -22,7 +23,26 @@
 <template name="post">
     <div class="col-sm-12 panel">
         <h2>{{title}}</h2>
-        <p>{{{text}}}</p> <!-- Три фигурные скобки означают, что HTML разметка не будет экранироваться -->
+        <p>{{{text}}}</p>
         {{published}}
     </div>
+</template>
+
+<template name="editor">
+    <h1>Новая запись</h1>
+    <br>
+    <div class="form-group">
+        <div class="col-lg-12">
+            <input type="text" class="form-control" id="title-area" placeholder="Заголовок">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="form-group">
+        <div class="col-lg-12">
+            <textarea class="form-control" rows="3" placeholder="Текст" id="editor-area"></textarea>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-default" id="submit-post">Sign in</button>
 </template>
