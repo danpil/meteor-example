@@ -1,0 +1,28 @@
+<head>
+    <title>Blog</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            {{> stream}}
+        </div>
+    </div>
+</div>
+
+</body>
+
+<template name="stream">
+    {{#each posts}}
+        {{> post}}
+    {{/each}}
+</template>
+
+<template name="post">
+    <div class="col-sm-12 panel">
+        <h2>{{title}}</h2>
+        <p>{{{text}}}</p> <!-- Три фигурные скобки означают, что HTML разметка не будет экранироваться -->
+        {{published}}
+    </div>
+</template>
